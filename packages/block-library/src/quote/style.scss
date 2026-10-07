@@ -24,3 +24,22 @@
 		display: block;
 	}
 }
+// Default style rules, kept in style.scss (and not only in theme.scss) so that
+// the "Default" and "Plain" styles look different with every theme.
+// :where() used to keep the specificity at zero so themes can easily override them.
+:where(.wp-block-quote:not(.is-style-plain):not(.is-style-large):not(.is-large)) {
+	border-left: 0.25em solid currentColor;
+	padding-left: 1em;
+}
+
+:where(.wp-block-quote.has-text-align-right:not(.is-style-plain):not(.is-style-large):not(.is-large)) {
+	border-left: none;
+	border-right: 0.25em solid currentColor;
+	padding-left: 0;
+	padding-right: 1em;
+}
+
+:where(.wp-block-quote.has-text-align-center:not(.is-style-plain):not(.is-style-large):not(.is-large)) {
+	border: none;
+	padding-left: 0;
+}
